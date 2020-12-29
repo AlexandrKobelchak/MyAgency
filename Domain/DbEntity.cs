@@ -8,6 +8,7 @@ namespace Domain
     {
         [Key]
         [Column("id")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
     }
 }

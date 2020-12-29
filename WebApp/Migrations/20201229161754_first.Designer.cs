@@ -4,14 +4,16 @@ using AppContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace WebApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201229161754_first")]
+    partial class first
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -190,49 +192,6 @@ namespace WebApp.Migrations
                     b.HasIndex("BankId");
 
                     b.ToTable("LegalPerson");
-                });
-
-            modelBuilder.Entity("Entities.Sale", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("id");
-
-                    b.Property<string>("AgentId")
-                        .HasColumnType("nvarchar(450)")
-                        .HasColumnName("agentId");
-
-                    b.Property<DateTime>("BeginDate")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("beginDate");
-
-                    b.Property<string>("Description")
-                        .HasMaxLength(512)
-                        .HasColumnType("nvarchar(512)")
-                        .HasColumnName("description");
-
-                    b.Property<int>("Duration")
-                        .HasColumnType("int")
-                        .HasColumnName("duration");
-
-                    b.Property<Guid>("TourId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("tourId");
-
-                    b.Property<Guid>("TouristId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("touristId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AgentId");
-
-                    b.HasIndex("TourId");
-
-                    b.HasIndex("TouristId");
-
-                    b.ToTable("sales");
                 });
 
             modelBuilder.Entity("Entities.Tour", b =>
@@ -695,31 +654,6 @@ namespace WebApp.Migrations
                     b.Navigation("Profile");
                 });
 
-            modelBuilder.Entity("Entities.Sale", b =>
-                {
-                    b.HasOne("Entities.Employee", "Agent")
-                        .WithMany("Sales")
-                        .HasForeignKey("AgentId");
-
-                    b.HasOne("Entities.Tour", "Tour")
-                        .WithMany("Sales")
-                        .HasForeignKey("TourId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Entities.TouristProfile", "Tourist")
-                        .WithMany("Sales")
-                        .HasForeignKey("TouristId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Agent");
-
-                    b.Navigation("Tour");
-
-                    b.Navigation("Tourist");
-                });
-
             modelBuilder.Entity("Entities.TourCountry", b =>
                 {
                     b.HasOne("Entities.Country", "Country")
@@ -877,8 +811,6 @@ namespace WebApp.Migrations
                 {
                     b.Navigation("CountryTour");
 
-                    b.Navigation("Sales");
-
                     b.Navigation("TourTourType");
                 });
 
@@ -896,18 +828,11 @@ namespace WebApp.Migrations
                     b.Navigation("Phones");
 
                     b.Navigation("ProfileTouristTag");
-
-                    b.Navigation("Sales");
                 });
 
             modelBuilder.Entity("Entities.TouristTag", b =>
                 {
                     b.Navigation("ProfileTouristTag");
-                });
-
-            modelBuilder.Entity("Entities.Employee", b =>
-                {
-                    b.Navigation("Sales");
                 });
 #pragma warning restore 612, 618
         }

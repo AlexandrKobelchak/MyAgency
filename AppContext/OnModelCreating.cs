@@ -13,16 +13,6 @@ namespace AppContext
     {
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Country>()
-                .Property(p => p.Id)
-                .HasDefaultValueSql("NEWID()")
-                .HasDefaultValue(Guid.NewGuid());
-
-            builder.Entity<TourType>()
-               .Property(p => p.Id)
-               .HasDefaultValueSql("NEWID()")
-               .HasDefaultValue(Guid.NewGuid());
-
             builder.Entity<Tour>()
                 .HasMany(t => t.Countries)
                 .WithMany(c => c.Tours)
@@ -49,21 +39,9 @@ namespace AppContext
                         .HasOne(ttt => ttt.Tour)
                         .WithMany(t => t.TourTourType)
                         .HasForeignKey(ttt => ttt.TourId),
-                    tt => tt.HasKey(ttt => new { ttt.TourId, ttt.TourTypeId }))
+                    tt => tt.HasKey(ttt => new { ttt.TourId, ttt.TourTypeId }));
 
-                 .Property(p => p.Id)
-                 .HasDefaultValueSql("NEWID()");
-
-            builder.Entity<TouristTag>()
-                .Property(p => p.Id)
-                .HasDefaultValueSql("NEWID()")
-                .HasDefaultValue(Guid.NewGuid());
-
-            builder.Entity<TouristPhone>()
-                .Property(p => p.Id)
-                .HasDefaultValueSql("NEWID()")
-                .HasDefaultValue(Guid.NewGuid());
-
+ 
             builder.Entity<TouristPhone>()
                .HasOne(p => p.Tourist)
                 .WithMany(t => t.Phones)
@@ -78,20 +56,53 @@ namespace AppContext
                         .HasOne(p => p.TouristTag)
                         .WithMany(p => p.ProfileTouristTag)
                         .HasForeignKey(p => p.TagId),
-                     
+
                      tpt => tpt
-                        .HasOne(p=>p.TouristProfile)
+                        .HasOne(p => p.TouristProfile)
                         .WithMany(p => p.ProfileTouristTag)
                         .HasForeignKey(p => p.TouristId),
-                     
-                     tpt => tpt.HasKey(k => new { k.TagId, k.TouristId}))
 
-               .Property(p => p.Id)
-               .HasDefaultValueSql("NEWID()")
-               .HasDefaultValue<Guid>(Guid.NewGuid());
+                     tpt => tpt.HasKey(k => new { k.TagId, k.TouristId }));
 
-            builder.Entity
 
+            builder.Entity<IndividualPerson>()
+                .HasOne(ip => ip.Profile)
+                .WithOne(p => p.IndividualPersonData)
+                .HasForeignKey<IndividualPerson>(ip => ip.Id)
+                .HasPrincipalKey<TouristProfile>(tp => tp.Id);
+
+            builder.Entity<LegalPerson>()
+               .HasOne(ip => ip.Profile)
+               .WithOne(p => p.LegalPersonData)
+               .HasForeignKey<LegalPerson>(ip => ip.Id)
+               .HasPrincipalKey<TouristProfile>(tp => tp.Id);
+
+            builder.Entity<LegalPerson>()
+                .HasOne(lp => lp.Bank)
+                .WithMany(b => b.LegalPersons)
+                .HasForeignKey(lp => lp.BankId);
+
+
+            builder.Entity<Employee>()
+                .HasOne(e => e.Company)
+                .WithMany(c => c.Emploiees)
+                .HasForeignKey(e => e.CompanyId);
+
+
+            builder.Entity<Sale>()
+                .HasOne(s => s.Agent)
+                .WithMany(e => e.Sales)
+                .HasForeignKey(s => s.AgentId);
+
+            builder.Entity<Sale>()
+               .HasOne(s => s.Tour)
+               .WithMany(e => e.Sales)
+               .HasForeignKey(s => s.TourId);
+
+            builder.Entity<Sale>()
+               .HasOne(s => s.Tourist)
+               .WithMany(e => e.Sales)
+               .HasForeignKey(s => s.TouristId);
 
             base.OnModelCreating(builder);
         }

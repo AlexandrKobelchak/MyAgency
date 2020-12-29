@@ -60,5 +60,6 @@ namespace Entities
 
         public LegalPerson LegalPersonData { get; set; }
         public IndividualPerson IndividualPersonData { get; set; }
+        public List<Sale> Sales { get; set; }
     }
 }

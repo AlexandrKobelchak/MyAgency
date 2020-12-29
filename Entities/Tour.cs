@@ -17,5 +17,6 @@ namespace Entities
         public List<TourType> TourTypes { get; set; }
         public List<TourCountry> CountryTour { get; set; }
         public List<Country> Countries { get; set; }
+        public List<Sale> Sales { get; set; }
     }
 }
