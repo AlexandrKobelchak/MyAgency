@@ -27,7 +27,7 @@ namespace Entities
         public Guid TouristId { get; set; }
 
         [Column("agentId")]
-        public string AgentId { get; set; }
+        public Guid AgentId { get; set; }
 
         [Column("tourId")]
         public Guid TourId { get; set; }

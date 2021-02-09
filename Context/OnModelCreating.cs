@@ -151,6 +151,7 @@ namespace Context
                       LastName = "Тестовый",
                       Comment = "Просто хороший человек",
                       Address = "Живет где-то в Днепре",
+                      City="Днепр",
                       Birthday = new DateTime(1978, 11, 20)
                   },
                   new TouristProfile
@@ -161,6 +162,7 @@ namespace Context
                       LastName = "Тестовый",
                       Comment = "Очень хороший человек",
                       Address = "Живет где-то в Киеве",
+                      City = "Киев",
                       Birthday = new DateTime(1988, 2, 13)
                   },
                   new TouristProfile
@@ -171,6 +173,7 @@ namespace Context
                       LastName = "Иванов",
                       Comment = "Просто хороший человек",
                       Address = "Живет где-то в Сухачевке",
+                      City = "Сухачевка",
                       Birthday = new DateTime(1973, 6, 22)
 
                   }

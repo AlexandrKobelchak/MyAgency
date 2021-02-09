@@ -46,7 +46,7 @@ namespace WebApp
             services.AddTransient<ITouristProfileRepository, TouristProfileRepository>();
             services.AddTransient<ITourRepository, TourRepository>();
             services.AddTransient<ITourTypeRepository, TourTypeRepository>();
-
+            services.AddTransient<ITouristTagRepository, TouristTagRepository>();
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
