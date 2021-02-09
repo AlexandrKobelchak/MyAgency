@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Entities.Identity;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Text;
 namespace Entities
 {
     [Table("Employees")]
-    public class Employee: IdentityUser
+    public class Employee: ApplicationUser, IDbEntity
     {
        
         //public IdentityUser User { get; set; }

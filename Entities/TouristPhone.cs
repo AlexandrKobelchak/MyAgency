@@ -1,5 +1,6 @@
 ﻿using Domain;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -19,5 +20,7 @@ namespace Entities
         [Column("touristId")]
         public Guid TouristProfileId { get; set; }
         public TouristProfile Tourist { get; set; }
+        public List<TouristPhoneSocial> TPS { get; set; }
+        public List<SocialNetwork> SocialNetworks { get; set; }
     }
 }

@@ -1,11 +1,13 @@
 ﻿using Entities;
+using Entities.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System;
 
-
-namespace AppContext
+namespace Context
 {
-    public partial class AppDbContext : IdentityDbContext
+    public partial class AppDbContext
+        :ApiAuthorizationDbContext<ApplicationUser, ApplicationRole, Guid>
     {
         public DbSet<Tour> Tours { get; set; }
         public DbSet<Country> Countries { get; set; }
@@ -20,5 +22,7 @@ namespace AppContext
         public DbSet<Company> Companies { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Sale> Sales { get; set; }
+        public DbSet<TouristPhoneSocial> TPS { get; set; }
+        public DbSet<SocialNetwork> SocialNetworks { get; set; }
     }
 }
