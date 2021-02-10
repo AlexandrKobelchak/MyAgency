@@ -5,7 +5,7 @@
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
-    <SpaRoot>ClientApp\</SpaRoot>
+    <SpaRoot>_ClientApp\</SpaRoot>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
 
     <!-- Set this to true if you enable server-side prerendering -->
@@ -29,28 +29,12 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="ClientApp\src\_generic\Service.ts" />
-    <None Remove="ClientApp\src\_interfaces\IModel.ts" />
-    <None Remove="ClientApp\src\_interfaces\IService.ts" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ApiDbContext\ApiDbContext.csproj" />
     <ProjectReference Include="..\BLL\BLL.csproj" />
     <ProjectReference Include="..\Context\Context.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
     <ProjectReference Include="..\Entities\Entities.csproj" />
     <ProjectReference Include="..\Repositories\Repositories.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ClientApp\src\_utilites\" />
-    <Folder Include="ClientApp\src\_resolvers\" />
-    <Folder Include="ClientApp\src\_services\" />
-    <Folder Include="ClientApp\src\_models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\_generic\Service.ts" />
-    <TypeScriptCompile Include="ClientApp\src\_interfaces\IModel.ts" />
-    <TypeScriptCompile Include="ClientApp\src\_interfaces\IService.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

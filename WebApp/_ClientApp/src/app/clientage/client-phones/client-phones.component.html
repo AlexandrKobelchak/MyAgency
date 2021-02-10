@@ -1,0 +1,34 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="row ">
+  <div class="col">
+    <button (click)="addPhone()" class="btn btn-light btn-icon" type="button">
+      <span class="icon">
+        <i class="fas fa-plus"></i>
+      </span>Добавить Номер
+    </button>
+  </div>
+</div>
+<div class="form-group row m-t-5" *ngFor="let phone of clientPhones; let i=index">
+  <div class="input-group col-4">
+    <button type="button" class="btn" (click)="removePhone(i)" [disabled]="clientPhones.length < 2"><i class="fas fa-minus"></i></button>
+
+    <phone></phone>
+
+  </div>
+  <div class="col-1">
+    <input type="checkbox" class="checkbox" id="sms_{{i}}" required />
+    <label for="sms_{{i}}">SMS</label>
+  </div>
+
+
+  <div class="col-1" *ngFor="let sn of social; let j=index">
+    <input type="checkbox" class="checkbox" id="{{sn.id}}_{{i}}" name="{{sn.name}}_{{i}}" required />
+    <label for="{{sn.id}}_{{i}}">{{sn.name}}</label>
+  </div>
+
+</div>
+
+
+
+

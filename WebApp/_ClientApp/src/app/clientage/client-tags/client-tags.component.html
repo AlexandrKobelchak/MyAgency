@@ -1,0 +1,4 @@
+<div class="col-md-6 float-left" *ngFor="let tag of tags">
+  <input type="checkbox" class="checkbox" id="_{{tag.id}}" value="{{tag.id}}"  [(ngModel)]="tag.isChecked"  (change)="onChangeCheck()" />
+  <label for="_{{tag.id}}">{{tag.tagName}}</label>
+</div>

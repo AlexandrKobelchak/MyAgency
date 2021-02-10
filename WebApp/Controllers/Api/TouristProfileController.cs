@@ -4,7 +4,7 @@ using Repositories;
 
 namespace WebApp.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Clientage")]
     [ApiController]
     public class TouristProfileController : ApiController<ITouristProfileRepository, TouristProfile>
     {
