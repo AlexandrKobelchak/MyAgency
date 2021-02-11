@@ -16,13 +16,13 @@
     <phone></phone>
 
   </div>
-  <div class="col-1">
+  <div class="col-1 social">
     <input type="checkbox" class="checkbox" id="sms_{{i}}" required />
     <label for="sms_{{i}}">SMS</label>
   </div>
 
 
-  <div class="col-1" *ngFor="let sn of social; let j=index">
+  <div class="col-1 social" *ngFor="let sn of social; let j=index">
     <input type="checkbox" class="checkbox" id="{{sn.id}}_{{i}}" name="{{sn.name}}_{{i}}" required />
     <label for="{{sn.id}}_{{i}}">{{sn.name}}</label>
   </div>
