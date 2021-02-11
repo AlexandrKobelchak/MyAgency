@@ -21,7 +21,7 @@
           <div class="input-group">
             <div class="input-group-prepend">
               <div class="input-group-text">
-                <i class="far fa-edit"></i>
+                <fa-icon [icon]="faEdit"></fa-icon>
               </div>
             </div>
             <input id="lastName" name="lastName" ngModel required minlength="2" pattern="^[A-Za-zА-Яа-я ]+$" #lastName="ngModel" type="text" class="form-control" placeholder="Введите фамилию здесь" />

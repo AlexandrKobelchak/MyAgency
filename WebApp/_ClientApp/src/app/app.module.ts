@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { PaymentsComponent } from './payments/payments.component';
 import { OptionsComponent } from './options/options.component';
 import { MailingComponent } from './mailing/mailing.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome/fontawesome.module';
 
 
 
@@ -33,12 +34,13 @@ import { MailingComponent } from './mailing/mailing.component';
     MailingComponent,
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    BrowserModule,//.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
     ApiAuthorizationModule,
     ClientageModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true },
