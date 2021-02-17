@@ -9,6 +9,7 @@ namespace Context
     public partial class AppDbContext
         :ApiAuthorizationDbContext<ApplicationUser, ApplicationRole, Guid>
     {
+        public DbSet<Asset> Assets { get; set; }
         public DbSet<Tour> Tours { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<TourCountry> ToursCountries { get; set; }

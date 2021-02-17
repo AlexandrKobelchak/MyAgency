@@ -6,7 +6,7 @@ import { NgForm } from '@angular/forms';
 import { TAG_MODES, TagsSharedState, TAGS_SHARED_STATE } from "src/_models/touristTagState.model";
 import { PHONE_MODES, PhonesSharedState, PHONES_SHARED_STATE } from "src/_models/touristPhonesState.model";
 import { Observable } from 'rxjs';
-import { faEdit, faMailBulk, fas } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faMailBulk } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 
@@ -36,8 +36,6 @@ export class ClientAddComponent {
 
             debugger;
         });
-
-        library.add(fas);
     }
 
     getValidationMessages(state: any, thingName?: string) {

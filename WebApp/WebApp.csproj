@@ -24,13 +24,17 @@
   </ItemGroup>
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\**" />
+    <EmbeddedResource Remove="ClientApp\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="ClientApp\src\app\mailing\mailing.component.ts" />
-    <None Remove="ClientApp\src\app\statistic\statistic.component.ts" />
+    <None Remove="AngularApp\src\app\upload-asset.component.ts" />
+    <None Remove="AngularApp\src\_services\upload-files.service.ts" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApiDbContext\ApiDbContext.csproj" />
@@ -41,13 +45,11 @@
     <ProjectReference Include="..\Repositories\Repositories.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ClientApp\src\app\home\" />
+    <Folder Include="Assets\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\app\mailing\mailing.component.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="ClientApp\src\app\statistic\statistic.component.ts" />
+    <TypeScriptCompile Include="AngularApp\src\app\upload-asset.component.ts" />
+    <TypeScriptCompile Include="AngularApp\src\_services\upload-files.service.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

@@ -15,6 +15,10 @@ import { BisnessComponent } from './bisness/bisness.component';
 import { ClientageModule } from './clientage/clientage.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { UploadFilesService } from '../_services/upload-files.service';
+import { UploadFileComponent } from './upload-asset.component';
+import { Ng2TelInputModule } from 'ng2-tel-input';
+//import { NgxIntlTelInputModule } from 'intlTelInputModule'
 
 @NgModule({
   declarations: [
@@ -27,19 +31,21 @@ import { RouterModule } from '@angular/router';
         PaymentsComponent,
         PhoneComponent,
         PhoneValidator,
-        BisnessComponent       
-        
+        BisnessComponent,
+        UploadFileComponent,
   ],
   imports: [
       BrowserModule,
       AppRoutingModule,
-      
       AppRoutingModule,
       ClientageModule,
       RouterModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      Ng2TelInputModule
   ],
-  providers: [],
+    providers: [
+        { provide: UploadFilesService, useClass: UploadFilesService },
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
