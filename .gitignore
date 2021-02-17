@@ -32,6 +32,9 @@ bld/
 [Ll]ogs/
 
 
+#My temporaly files
+Temp/
+
 # Idea Studio cache/options directory
 .idea/
 
