@@ -8,28 +8,36 @@ import { MailingComponent } from './mailing/mailing.component';
 import { OptionsComponent } from './options/options.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { PaymentsComponent } from './payments/payments.component';
-import { PhoneComponent } from './_common/phone.component/phone.component';
+import { PhoneComponent, PhoneValidator } from './_common/phone.component/phone.component';
 import { HomeComponent } from './home/home.component';
 import { StatisticComponent } from './statistic/statistic.component';
 import { BisnessComponent } from './bisness/bisness.component';
+import { ClientageModule } from './clientage/clientage.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
         AppComponent,
+        NavMenuComponent,
         HomeComponent,
         MailingComponent,
         OptionsComponent,
         StatisticComponent,
-        NavMenuComponent,
         PaymentsComponent,
         PhoneComponent,
-        BisnessComponent
+        PhoneValidator,
+        BisnessComponent       
+        
   ],
   imports: [
       BrowserModule,
       AppRoutingModule,
-      FontAwesomeModule,
-      AppRoutingModule
+      
+      AppRoutingModule,
+      ClientageModule,
+      RouterModule,
+      ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,7 @@
     class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
   >
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']"><img style="width:70px; height:70px" src="logo.png" alt="MyAgency"/></a>
+      <a class="navbar-brand" routerLink="/"><img style="width:70px; height:70px" src="logo.png" alt="MyAgency"/></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -21,33 +21,33 @@
       >
         <ul class="navbar-nav flex-grow">
 
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/home']">
+          <li class="nav-item">
+            <a class="nav-link text-dark" >
               <span class='glyphicon glyphicon-home'></span> Дела
             </a>
           </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/clientage']">
+          <li class="nav-item" routerLinkActive="['link-active']">
+            <a class="nav-link text-dark" routerLink="/clientage">
               <span class='glyphicon glyphicon-home'></span> Клиенты
             </a>
           </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/payments']">
+          <li class="nav-item" routerLinkActive="['link-active']">
+            <a class="nav-link text-dark" routerLink="/payments">
               <span class='glyphicon glyphicon-education'></span> Платежи
             </a>
           </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/statistic']">
+          <li class="nav-item" routerLinkActive="['link-active']">
+            <a class="nav-link text-dark" routerLink="/statistic">
               <span class='glyphicon glyphicon-th-list'></span> Статистика
             </a>
           </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/mailing']">
+          <li class="nav-item" routerLinkActive="['link-active']">
+            <a class="nav-link text-dark" routerLink="/mailing">
               <span class='glyphicon glyphicon-envelope'></span> Рассылки
             </a>
           </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/options']">
+          <li class="nav-item" routerLinkActive="['link-active']">
+            <a class="nav-link text-dark" routerLink="/options']">
               <span class='glyphicon glyphicon-cod'></span> Настройка
             </a>
           </li>

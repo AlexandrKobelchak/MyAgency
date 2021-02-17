@@ -23,6 +23,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.2",
     "@fortawesome/free-regular-svg-icons": "^5.15.2",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@vicoders/reactive-form": "^1.0.134",
     "bootstrap": "^4.6.0",
     "guid-typescript": "^1.0.9",
     "intl-tel-input": "^17.0.11",
