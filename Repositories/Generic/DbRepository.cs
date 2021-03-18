@@ -53,12 +53,7 @@ namespace Repositories
 
         public async Task<bool> ChangeItemAsync(T item)
         {
-            T changed = _context.Set<T>().FirstOrDefault(i => i.Id == item.Id);
-            if (changed == null)
-            {
-                return false;
-            }
-            changed = item;
+            _context.Entry(entity).State = EntityState.Modified;
             return await SaveChangesAsync() > 0;
         }
         public async Task<bool> UpdateItemAsync(T item)

@@ -20,7 +20,6 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     FormsModule,
     ReactiveFormsModule,
     NgxIntlTelInputModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
