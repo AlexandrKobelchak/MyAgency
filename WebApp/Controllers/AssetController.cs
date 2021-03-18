@@ -71,7 +71,7 @@ namespace WebApplication8.Controllers
 
             return Redirect("/Home/Index");
         }
-        public IActionResult Update(IFormCollection formCollection)
+        public IActionResult Update(Guid id, IFormCollection formCollection)
         {
 
             return Redirect("/Home/Index");
