@@ -7,10 +7,24 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgxIntlTelInputModule} from "ngx-intl-tel-input";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {NavMenuComponent} from "./nav-menu/nav-menu.component";
+import {HomeComponent} from "./home/home.component";
+import {MailingComponent} from "./mailing/mailing.component";
+import {OptionsComponent} from "./options/options.component";
+import {PaymentsComponent} from "./payments/payments.component";
+import {StatisticComponent} from "./statistic/statistic.component";
+import {BisnessComponent} from "./bisness/bisness.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavMenuComponent,
+    HomeComponent,
+    MailingComponent,
+    OptionsComponent,
+    PaymentsComponent,
+    StatisticComponent,
+    BisnessComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +33,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxIntlTelInputModule
+    NgxIntlTelInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

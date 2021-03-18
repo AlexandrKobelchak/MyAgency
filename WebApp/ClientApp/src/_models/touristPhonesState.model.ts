@@ -1,5 +1,6 @@
 import { InjectionToken } from "@angular/core";
-import { ClientPhoneModel, ClientPhoneSocial } from "src/_models/clientModel";
+import {ClientPhoneModel} from "./clientPhoneModel";
+
 
 export enum PHONE_MODES {
     CREATE, EDIT
