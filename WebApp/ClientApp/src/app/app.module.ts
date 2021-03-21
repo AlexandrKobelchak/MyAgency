@@ -14,6 +14,8 @@ import {OptionsComponent} from "./options/options.component";
 import {PaymentsComponent} from "./payments/payments.component";
 import {StatisticComponent} from "./statistic/statistic.component";
 import {BisnessComponent} from "./bisness/bisness.component";
+import {ClientageModule} from "./clientage/clientage.module";
+import {PhoneComponent} from "./_common/phone.component/phone.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import {BisnessComponent} from "./bisness/bisness.component";
     OptionsComponent,
     PaymentsComponent,
     StatisticComponent,
-    BisnessComponent
+    BisnessComponent,
+      PhoneComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +37,7 @@ import {BisnessComponent} from "./bisness/bisness.component";
     FormsModule,
     ReactiveFormsModule,
     NgxIntlTelInputModule,
+    ClientageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,15 @@
+<div class="col-md-6"><h1>Поиск клиента</h1></div>
+<div class="col-md-6"><client-menu></client-menu></div>
+                         
+<div class="input-group">
+  <div class="input-group-prepend">
+    <div class="input-group-text">
+      <i class="fas fa-search"></i>
+    </div>
+  </div>
+  <input id="find" name="find" type="text" class="form-control" placeholder="имя, фамилия или е-маил" [(ngModel)]="findText" (ngModelChange)="onTextChange($event)"/>
+</div>
+
+<ul>
+  <li *ngFor="let client of clients">{{client.firstName}} {{client.middleName}} {{client.lastName}}</li>
+</ul>

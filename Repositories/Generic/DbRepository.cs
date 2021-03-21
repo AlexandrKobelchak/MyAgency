@@ -51,7 +51,7 @@ namespace Repositories
             return await _context.Set<T>().ToListAsync<T>();
         }
 
-        public async Task<bool> ChangeItemAsync(T item)
+        public async Task<bool> ChangeItemAsync(T entity)
         {
             _context.Entry(entity).State = EntityState.Modified;
             return await SaveChangesAsync() > 0;
